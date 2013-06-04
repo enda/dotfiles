@@ -13,12 +13,14 @@ ZSH_THEME="robbyrussell"
 alias ll='ls -lF'
 alias la='ls -la'
 alias l='ls -CF'
-alias sshtek='ssh musial_j@ssh.epitech.eu'
-alias sshperso='ssh root@musialak.fr'
 alias clean='find . -type f -and \( -name "*.sw[p|a|o]" -or -name "*~" \) -printf "\033[32m[-]\033[00m In directory \033[33m%-20h\033[0m delete file \033[31m%f\033[0m\n" -exec rm {} \;'
 alias emacs='emacs -nw'
 alias ne='emacs'
-alias norme='~/norme -nocheat'
+
+alias cleansvn='find ./ -name ".svn" | xargs rm -Rf'
+alias cleangit='find ./ -name ".git" | xargs rm -Rf'
+
+
 alias mvn='env M2_HOME="/usr/local/apache-maven-3.0.4" env M2="$M2_HOME/bin" env JAVA_HOME="/usr/lib/jvm/java-6-sun-1.6.0.30" env ANDROID_HOME="/home/enda/android-sdk-linux" mvn'
 alias nexus='sudo mtpfs -o allow_other /media/nexus4 && sudo umount /media/nexus4 && cd /media/nexus4/'
 
