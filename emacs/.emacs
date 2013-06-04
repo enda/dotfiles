@@ -11,6 +11,9 @@
 ;; CONFIGURATION ;;
 ;;;;;;;;;;;;;;;;;;;
 
+(set-language-environment "UTF-8")
+(display-time-mode t)
+
 (global-linum-mode 1) ;; line number
 (show-paren-mode 1) ; turn on paren match highlighting
 (setq show-paren-style 'expression) ; highlight entire bracket expression
