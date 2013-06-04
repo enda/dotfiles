@@ -60,13 +60,18 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (autoload 'moz-minor-mode "moz" "Mozilla Minor and Inferior Mozilla Modes" t)
-(defun moz-firefox-reload ()
-  (comint-send-string (inferior-moz-process) "BrowserReload();"))
 
-(global-set-key (kbd "C-x r")
-                (lambda ()
-                  (interactive)
-                  (comint-send-string (inferior-moz-process)
-                                      "BrowserReload();")))
+(add-hook 'javascript-mode-hook 'auto-reload-firefox-on-after-save-hook)
+(add-hook 'html-mode-hook 'auto-reload-firefox-on-after-save-hook)
+(add-hook 'css-mode-hook 'auto-reload-firefox-on-after-save-hook)
+(add-hook 'sass-mode-hook 'auto-reload-firefox-on-after-save-hook)
+(add-hook 'php-mode-hook 'auto-reload-firefox-on-after-save-hook)
 
 
+(defun auto-reload-firefox-on-after-save-hook ()
+          (add-hook 'after-save-hook
+                       '(lambda ()
+                          (interactive)
+                          (comint-send-string (inferior-moz-process)
+                                              "setTimeout(BrowserReload(), \"1000\");"))
+                       'append 'local)) ; buffer-local
