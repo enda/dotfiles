@@ -6,10 +6,10 @@
 (global-set-key [(meta g)]	'goto-line)
 (global-set-key [(control r)]	'replace-string)
 
-(global-set-key (kbd "<C-up>")		'shrink-window)
-(global-set-key (kbd "<C-down>")	'enlarge-window)
-(global-set-key (kbd "<C-left>")	'shrink-window-horizontally)
-(global-set-key (kbd "<C-right>")	'enlarge-window-horizontally)
+(global-set-key [(control shift up)]	'shrink-window)
+(global-set-key [(control shift down)]	'enlarge-window)
+(global-set-key [(control shift left)]	'shrink-window-horizontally)
+(global-set-key [(control shift right)]	'enlarge-window-horizontally)
 
 ;;;;;;;;;;;;;;;;;;;
 ;; CONFIGURATION ;;
