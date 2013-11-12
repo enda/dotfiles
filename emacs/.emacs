@@ -59,6 +59,19 @@
 (color-theme-solarized-dark)
 
 
+;;;;;;;;;;;;;;;;;;;;;
+;; MULTIPLE CURSOR ;;
+;;;;;;;;;;;;;;;;;;;;;
+
+(require 'multiple-cursors)
+
+(global-set-key [(meta m)]	'mc/edit-lines)
+
+(global-set-key [(meta >)]			'mc/mark-next-like-this)
+(global-set-key [(meta <)]			'mc/mark-previous-like-this)
+(global-set-key [(meta ,))]	'mc/mark-all-like-this)
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; FIREFOX AUTOREFRESH ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
