@@ -1,0 +1,21 @@
+startup_message off
+
+altscreen on
+
+defmonitor on
+
+defflow off
+escape ^Hh
+
+bindkey ^[[1;3D prev
+bindkey ^[[1;3C next
+
+autodetach on
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+
+chdir ~
+screen -t HOME    0
+
+chdir /tmp/
+screen -t /tmp    1

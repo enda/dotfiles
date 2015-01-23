@@ -7,37 +7,38 @@
 	cf = cat-file
 	ci = commit
 	cia = commit --amend
-  	cl = clone
-  	co = checkout
-  	df = diff
-  	dfc = diff --cached
-  	fe = fetch
-  	l = log
-  	me = merge
-  	pl = pull
-  	plo = pull origin
-  	ps = push
-  	pso = push origin
-  	rb = rebase
-  	rba = rebase --abort
-  	rbc = rebase --continue
-  	re = remote
-  	rs = reset
-  	rss = reset --soft
-  	rsh = reset --hard
-  	rv = revert
-  	sm = submodule
-  	sma = submodule add
-  	smf = submodule foreach
-  	sh = stash
-  	sha = stash apply
-  	shc = stash clear
-  	shl = stash list
-  	shp = stash pop
-  	shs = stash save
-  	st = status
-  	sw = show
-  	t = tag
+	cl = clone
+	co = checkout
+	df = diff
+	dfc = diff --cached
+	fe = fetch
+	l = log
+	me = merge
+	pl = pull
+	plo = pull origin
+	ps = push
+	pso = push origin
+	rb = rebase
+	rba = rebase --abort
+	rbc = rebase --continue
+	re = remote
+	rs = reset
+	rss = reset --soft
+	rsh = reset --hard
+	rv = revert
+	sm = submodule
+	sma = submodule add
+	smf = submodule foreach
+	sh = stash
+	sha = stash apply
+	shc = stash clear
+	shl = stash list
+	shp = stash pop
+	shs = stash save
+	st = status
+	sw = show
+	t = tag
+	flash = "!git stash && git pull --rebase && git push && git stash pop"
 
 	forget = update-index --assume-unchanged
 	unforget = update-index --no-assume-unchanged
@@ -52,9 +53,12 @@
 	trash = clean -ffdx
 
 	tree = log --graph --abbrev-commit --decorate --date=relative --all \
-    	       --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) \
-    	       %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+			   --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) \
+			   %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
 	who = shortlog -sne
+	lg = log --date-order --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+    rank = shortlog -sn --no-merges
+
 
 [core]
 	excludesfile = ~/.cvsignore
@@ -79,10 +83,13 @@
 	keeptemporaries = false
 
 [branch]
-	autosetuprebase = always
+	autosetupmerge = always
 
 [help]
 	autocorrect = 10
 
 [advice]
 	statusHints = false
+
+[push]
+	default = tracking

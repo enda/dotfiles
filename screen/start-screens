@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/usr/bin/screen -O -U -S screens -c ~/.screenrc-startscreens
