@@ -69,6 +69,11 @@
 (autoload 'js2-mode "js2-mode" "JS mode on Emacs" t)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
+;;coffee-mode
+(require 'coffee-mode)
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(custom-set-variables '(coffee-tab-width 4))
+
 ;;;;;;;;;;;;;;;
 ;; YASNIPPET ;;
 ;;;;;;;;;;;;;;;
