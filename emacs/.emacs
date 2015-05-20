@@ -11,6 +11,11 @@
 (global-set-key [(control shift left)]	'shrink-window-horizontally)
 (global-set-key [(control shift right)]	'enlarge-window-horizontally)
 
+(global-set-key [(shift left)] 'windmove-left) ; Shift+left => windows left
+(global-set-key [(shift left)] 'windmove-right) ; Shift+right => windows right
+(global-set-key [(shift left)] 'windmove-up) ; Shift+up => windows up
+(global-set-key [(shift left)] 'windmove-down) ; Shift+down => windows down
+
 ;; reset key to work with GNU Screen
 (global-set-key "\M-[1;5C"    'forward-word)      ; Ctrl+right   => forward word
 (global-set-key "\M-[1;5D"    'backward-word)     ; Ctrl+left    => backward word
