@@ -305,3 +305,5 @@
 
 (add-hook 'css-mode-hook 'hexcolour-add-to-font-lock)
 (add-hook 'sass-mode-hook 'hexcolour-add-to-font-lock)
+(add-hook 'sass-mode-hook (lambda () (setq comment-start "//"
+                                        comment-end   "")))
