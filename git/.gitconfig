@@ -92,4 +92,4 @@
 	statusHints = false
 
 [push]
-	default = tracking
+	default = simple
