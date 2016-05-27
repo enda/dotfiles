@@ -58,7 +58,7 @@
 	who = shortlog -sne
 	lg = log --date-order --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
     rank = shortlog -sn --no-merges
-
+    compare = log --left-right --graph --cherry-pick --oneline
 
 [core]
 	excludesfile = ~/.cvsignore
